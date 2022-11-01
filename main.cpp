@@ -15,6 +15,7 @@ int main(int argc, char *argv[])
     {
         std::cout << "Port is missing in arguments!" << std::endl;
     }
+
     const int port = atoi(argv[1]);
     ServerSocket serverSocket(port);
     try

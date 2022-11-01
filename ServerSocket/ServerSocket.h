@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <sqlite3.h>
 
 class ServerSocket {
 public:
@@ -16,10 +17,12 @@ public:
     void startSession();
 private:
     void closeSocket();
+    void initialize();
 
     sockaddr_in m_servAddr;
     const int m_serverSd;
     int m_clientSd;
+    sqlite3* m_db;
 };
 
 #endif //SERVER_SOCKET_H
